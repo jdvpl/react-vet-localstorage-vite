@@ -10,3 +10,10 @@
   npm i 
   npm run dev
 ```
+
+### jsx
+
+```
+  javascript syntax extension
+  
+```
