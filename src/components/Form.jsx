@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 
-const Form = () => {
+const Form = ({setpacientes,pacientes}) => {
   const [nombre, setnombre] = useState('');
   const [propietario, setpropietario] = useState('');
   const [email, setemail] = useState('');
@@ -15,8 +15,19 @@ const Form = () => {
       seterror(true);
       return;
     }
-      
     seterror(false);
+    // objetos
+    const objetoPaciente={
+      nombre,propietario,email,fecha,sintomas
+    }
+    setpacientes([...pacientes,objetoPaciente])
+
+    // reiniciar formulario
+    setnombre('')
+    setpropietario('')
+    setemail('')
+    setfecha('')
+    setsintomas('')
     
   }
 
