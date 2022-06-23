@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react'
+import MessageError from './MessageError';
 
 const Form = ({setpacientes,pacientes}) => {
   const [nombre, setnombre] = useState('');
@@ -43,7 +44,7 @@ const Form = ({setpacientes,pacientes}) => {
       <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg py-10 px-5 mb-10 mx=5" >
 
       {
-        error && <div className="p-3 mt-3 rounded-md bg-red-800 uppercase font-bold text-white text-center">Todos los campos son obligatorios</div>
+        error && <MessageError>Todos los campos son obligatorios</MessageError> 
       }
         <div className="mb-5">
           <label htmlFor="nombre" className="block text-gray-700 uppercase font-bold">Nombre Mascota</label>
